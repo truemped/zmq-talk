@@ -26,7 +26,7 @@ tests_require = ['coverage>=3.4']
 setup(
     name = "zmqexamples",
     version = "1.0",
-    description = "Examples from the ZeroMQ Talk",
+    description = "Examples from my ZeroMQ Talk",
     author = "Daniel Truemper",
     author_email = "truemped@googlemail.com",
     url = "",
@@ -36,13 +36,21 @@ setup(
     include_package_data = True,
     test_suite = 'nose.collector',
     install_requires = [
-        'pyzmq>=2.0.10',
+        'pyzmq>=2.1.7',
     ],
     tests_require = tests_require,
     extras_require = {'test': tests_require},
     entry_points = {
         'console_scripts' : [
-            'spyder = spyder:spyder_admin_main',
+            'req = zmqexamples:req',
+            'rep = zmqexamples:rep',
+            'lruqueue = zmqexamples:lru_queue',
+            'lruworker = zmqexamples:lru_worker',
+            'lruqueue2 = zmqexamples:lru_queue2',
+            'lruworker2 = zmqexamples:lru_worker2',
+            'clientquit = zmqexamples:quit_client',
+            'device = zmqexamples:device',
+            'deviceworker = zmqexamples:device_worker',
         ]
     }
 )
